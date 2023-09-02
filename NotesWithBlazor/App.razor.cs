@@ -89,7 +89,6 @@ namespace NotesWithBlazor
 			notes = await _httpClient.GetFromJsonAsync<List<Note>>("api/notes") ?? notes;
 			StateHasChanged();
 
-            await Console.Out.WriteLineAsync();
         }
 	}
 }
