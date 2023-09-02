@@ -1,0 +1,109 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body {
+    padding-top: 50px;
+    font-family: Montserrat, serif;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+    color: #402725;
+}
+
+    body::selection {
+        background-color: #eee;
+    }
+
+input::selection {
+    background-color: #eee;
+}
+
+.main-container {
+    font-size: 30px;
+    border-style: solid;
+    padding: 5px 20px 20px 20px;
+    border-radius: 15px 15px;
+    border-width: 0;
+    box-shadow: lightslategrey 5px 5px;
+    background-color: antiquewhite;
+}
+
+.main-container > ul > li {
+        list-style: none;
+}
+
+.main-container > ul > li > button {
+            border-style: solid;
+            vertical-align: middle;
+            background-color: azure;
+            border-color: black;
+            border-width: 0;
+            color: black;
+            padding: 7px 12px;
+            border-radius: 50px 50px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+}
+
+.main-container > ul > li > label {
+            margin-top: 10px;
+            overflow-wrap: break-word;
+            max-width: 17ch;
+            display: inline-block;
+}
+
+.main-container > ul > li > input {
+            font-size: 30px;
+            border-radius: 15px 15px;
+            outline: none;
+            border-width: 0;
+            margin-bottom: 2px;
+            padding: 10px 0px 10px 0px;
+            padding-left: 10px;
+}
+
+.main-container > ul > li > input:focus {
+                border-radius: 15px 15px;
+                outline: none;
+                padding-left: 10px;
+}
+
+.main-container > ul {
+        padding-inline-start: 0;
+        vertical-align: middle;
+}
+
+.main-container > h2 {
+        display: flex;
+        justify-content: center;
+        font-family: cursive;
+}
+
+ .main-container p {
+        padding-left: 45px;
+        font-size: 30px;
+        margin: 0;
+        color: lightslategrey;
+        margin-top: 10px;
+        overflow-wrap: break-word;
+        max-width: 17ch;
+        display: inline-block;
+        text-decoration: line-through;
+}
+
+    .main-container > button {
+        border-style: none;
+        vertical-align: middle;
+        background-color: azure;
+        border-width: 0;
+        color: black;
+        padding: 10px 12px;
+        border-radius: 50px 50px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 600;
+        color: lightslategrey;
+    }

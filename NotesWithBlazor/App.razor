@@ -1,0 +1,51 @@
+﻿@using Microsoft.AspNetCore.Components.Web
+@using NotesShare.Models
+@using System.Net.Http.Json
+@using Microsoft.Extensions.Logging
+@using NotesWithBlazor
+
+@inject HttpClient _httpClient
+
+<div class="main-container">
+
+	<h2>To-Do List</h2>
+
+	<ul>
+		<li>
+			<input type="text" @bind="newNoteText" @onkeyup="HandleNewNoteInput" disabled=@isInputDisabled />
+
+		</li>
+		@foreach (var note in notes)
+		{
+			<li>
+				@if (isEditing && note.Id == editingNoteId)
+				{
+					<input @bind="editedNoteText" @onblur="(e) => FinishEditing(note)" @onkeyup="(e)=>FinishEditingOnEnter(e,note)" />
+
+
+				}
+				else
+				{
+					if (!note.IsComplited)
+					{
+
+						<button id="@($"chek_{note.Id}")" @onclick="(e) =>AcceptCompletion(note)">&#10003</button>
+						<label @ondblclick="(e) => StartEditing(note)" style="cursor: pointer;">@note.Text</label>
+
+					}
+					else
+					{
+						ComplitedNotesCounter++;
+						<p>@note.Text</p>
+					}
+
+				}
+			</li>
+		}
+	</ul>
+
+	@if (ComplitedNotesCounter > 0)
+	{
+		<button @onclick="DeleteCompletedNotes">Delete Completed</button>
+	}
+</div>
